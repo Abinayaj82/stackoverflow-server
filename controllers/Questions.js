@@ -74,3 +74,15 @@ export const deleteQuestion = async (req,res)=>{
         res.status(404).json({message:"id not found"})
     }
  }
+ export const askedQuestions = async(req,res)=>{
+    try {
+        const {id :_id} = req.params;
+        const today = new Date();
+        today.setUTCHours(0,0,0,0);
+        const questionCount = await Questions.countDocuments({userId: _id,askedOn :{$gte:today}})
+        console.log(questionCount)
+        res.status(200).json(questionCount)
+    } catch (error) {
+        console.log(error)
+    }
+ }

@@ -6,6 +6,9 @@ import mongoose from 'mongoose';
     about:{type:String},
     tags :{type: [String]},
     joinedOn :{type:Date, default:Date.now},
+    subscription :{type:String,default:"free"},
+    subscriptionExpire: {type:Number,default:0},
+    friends :{type:[String],default:[]},
 
 
 
