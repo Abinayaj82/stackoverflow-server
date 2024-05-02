@@ -5,7 +5,9 @@ const postSchema = mongoose.Schema({
    name:{type:String,required:true},
    desc :{type:String},
    likes:{type : [String],default:[]},
-   image: String,
+   avatar :{type:String},
+   cloudinary_id:{type:String},
+   //image: String,
    video: String,
    createdAt:{
     type:Date,
